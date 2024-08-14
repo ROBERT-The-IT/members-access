@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Access</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="login-form" class="container">
+        <h2>Login</h2>
+        <form id="form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <div id="login-loading" class="spinner" style="display: none;">Please Wait...</div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <div id="member-content" class="container" style="display: none;">
+        <nav>
+            <ul>
+                <li><a href="#" id="dashboard-link">Dashboard</a></li>
+                <li><a href="#" id="leadership-link">Leadership</a></li>
+                <li><a href="#" id="all-members-link">Members</a></li>
+                <li><a href="#" id="projects-link">Projects</a></li>
+                <li><a href="#" id="economics-link">Partnership</a></li>
+                <li><a href="#" id="publications-link">Publications</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+            <img src="C:\Users\User\Desktop\ROBERT-The-IT\mpesa-server\images\log1.png" alt="Logo" id="logo">
+        </nav>
+        <div id="content">
+            <div id="dashboard">
+                <h2>Member Dashboard</h2>
+                <input type="text" id="memberName" placeholder="Enter Member Name">
+                <label for="requestType">Request Type:</label>
+                <select id="requestType" name="requestType">
+                    <option value="statement">Full Statement</option>
+                    <option value="balance">Balance Only</option>
+                </select>
+                <button id="submitRequest">Submit</button>
+                <div id="loading" class="spinner" style="display: none;">Please Wait...</div>
+                <div id="results"></div>
+                <button id="downloadPdf" style="display: none;">Download as PDF</button> Thank you for making Innovative Investors Group grow, a story to tell soon      #investwithus  <P>Tuendelee kuamini - Tuendelee kuazimia - Tuendelee kukuza</P>
+            </div>
+            <div id="leadership" style="display: none;">
+                <h2>Leadership</h2>
+                <!-- Leadership content here -->
+            </div>
+            <div id="all-members" style="display: none;">
+                <h2>All Members</h2>
+                <!-- All Members content here -->
+            </div>
+            <div id="projects" style="display: none;">
+                <h2>Projects</h2>
+                <!-- Projects content here -->
+            </div>
+            <div id="economics" style="display: none;">
+                <h2>Economics</h2>
+                <!-- Economics content here -->
+            </div>
+            <div id="publications" style="display: none;">
+                <h2>Publications</h2>
+                <!-- Publications content here -->
+            </div>
+        </div>
+    </div>
+    <script src="app.js">
+         function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'mm', 'a4');
+            const elementHTML = document.getElementById('results').innerHTML;
+            const margins = {
+                top: 10,
+                bottom: 10,
+                left: 10,
+                width: 190
+            };
+
+            doc.setFontSize(10);
+            doc.html(elementHTML, {
+                callback: function (doc) {
+                    doc.save('statement.pdf');
+                },
+                x: margins.left,
+                y: margins.top,
+                html2canvas: {
+                    scale: 0.5 // Adjust the scale to fit content
+                }
+            });
+        }
+    </script>
+</body>
+</html>

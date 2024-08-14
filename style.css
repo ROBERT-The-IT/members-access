@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 880px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#logo-container {
+    order: 1; /* Make sure the logo is the last element */
+    margin-left: auto; /* Push the logo to the far right */
+}
+
+#logo {
+    height: 80px; /* Adjust the height */
+    width: auto; /* Maintain aspect ratio */
+  
+    flex-direction: row;
+    margin-left: auto;
+}
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #007bff;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3;
+}
+
+#results {
+    margin-top: 10px;
+}
+
+#results table {
+    width: 100%;
+   
+}
+#results tr:nth-child(2) {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#results tr:nth-child(3) {
+    font-weight: lighter;
+    font-size: 0.2em;
+    text-align: center;
+    white-space: nowrap;
+    color: darkcyan;
+}
+#content > div {
+    display: none;
+}
+
+.spinner {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #007bff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
